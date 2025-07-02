@@ -40,5 +40,10 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"@observablehq/plot": "^0.6.17",
+		"intersection-observer": "^0.12.2",
+		"scrollama": "^3.2.0"
 	}
 }
