@@ -43,7 +43,10 @@
 	},
 	"dependencies": {
 		"@observablehq/plot": "^0.6.17",
+		"i": "^0.3.7",
 		"intersection-observer": "^0.12.2",
-		"scrollama": "^3.2.0"
+		"s": "^1.0.0",
+		"scrollama": "^3.2.0",
+		"svelte-vertical-timeline": "^2.0.0"
 	}
 }
