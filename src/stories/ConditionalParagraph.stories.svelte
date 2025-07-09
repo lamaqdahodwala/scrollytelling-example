@@ -16,7 +16,8 @@
   args={{
     threshold: 0.5,
     progress: 0,
-    text: "Test"
+    text: "Test",
+    elementHeight: 20
   }}
 
 />

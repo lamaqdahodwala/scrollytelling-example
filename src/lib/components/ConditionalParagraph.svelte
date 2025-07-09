@@ -1,8 +1,15 @@
 <script lang="ts">
-	let { text, progress, threshold }: { text: string; progress: number, threshold: number} = $props();
-  import { fade } from "svelte/transition";
+	let {
+		text,
+		progress,
+		threshold,
+		elementHeight
+	}: { text: string; progress: number; threshold: number; elementHeight: number } = $props();
+	import { fade } from 'svelte/transition';
 </script>
 
-{#if progress > threshold}
-  <p transition:fade={{duration: 100}}>{text}</p>
-{/if}
+<div style="height: {elementHeight < 1 ? elementHeight * 100 : elementHeight}%">
+	{#if progress > threshold}
+		<div transition:fade={{ duration: 100 }} class="h-full">{text}</div>
+	{/if}
+</div>
