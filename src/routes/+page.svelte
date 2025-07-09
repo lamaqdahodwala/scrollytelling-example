@@ -53,13 +53,15 @@
 				<TimelineConnector />
 			</TimelineSeparator>
 			<TimelineContent>
-				<div class="step h-screen grow">
+				<div class="step h-full grow">
 					<p class="sticky top-1/2">{i}</p>
 				</div>
 			</TimelineContent>
 			<TimelineOppositeContent slot="opposite-content">
 				<div>
-					<p class="h-64">{progress}</p>
+					<p class="h-screen">{progress}</p>
+					<p class="h-screen">{progress}</p>
+					<p class="h-screen">{progress}</p>
 				</div>
 			</TimelineOppositeContent>
 		</TimelineItem>
