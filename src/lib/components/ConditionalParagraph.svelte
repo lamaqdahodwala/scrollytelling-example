@@ -10,6 +10,8 @@
 
 <div style="height: {elementHeight < 1 ? elementHeight * 100 : elementHeight}%">
 	{#if progress > threshold}
-		<div transition:fade={{ duration: 100 }} class="h-full">{text}</div>
+		<div transition:fade={{ duration: 100 }} class="h-full">
+      <p class="sticky top-1/4">{text}</p>
+    </div>
 	{/if}
 </div>
