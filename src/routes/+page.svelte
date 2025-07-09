@@ -16,6 +16,8 @@
 	let directionOfScroll = $state();
 	let progress: number = $state(0);
 
+  import * as Plot from "@observablehq/plot"
+
 	onMount(() => {
 		let scroller = scrollama();
 
@@ -35,11 +37,30 @@
 	});
 
 	let events = ['2021', '2022', '2023', '2024'];
+
+  let barChart: HTMLElement | undefined = $state()
+
+  $effect(() => {
+    barChart?.firstChild?.remove()
+    barChart?.append(
+      Plot.plot(
+        {
+          marks: [
+            Plot.barX([progress]),
+          ],
+          x: {
+            domain: [0, 1],
+            grid: true
+          }
+        }
+      )
+    )
+  })
 </script>
 
 <div class="grid h-screen items-center bg-green-100">
 	<div>
-		<h1 class="text-center text-8xl font-bold py-5">An AI Future</h1>
+		<h1 class="py-5 text-center text-8xl font-bold">An AI Future</h1>
 		<p class="text-center text-xl">Lamaq Dahodwala and Joel Raj</p>
 	</div>
 </div>
@@ -53,15 +74,14 @@
 				<TimelineConnector />
 			</TimelineSeparator>
 			<TimelineContent>
-				<div class="step h-full grow">
+				<div class="step h-96 grow">
 					<p class="sticky top-1/2">{i}</p>
 				</div>
 			</TimelineContent>
 			<TimelineOppositeContent slot="opposite-content">
 				<div>
-					<p class="h-screen">{progress}</p>
-					<p class="h-screen">{progress}</p>
-					<p class="h-screen">{progress}</p>
+					<div bind:this={barChart}> 
+					</div>
 				</div>
 			</TimelineOppositeContent>
 		</TimelineItem>
