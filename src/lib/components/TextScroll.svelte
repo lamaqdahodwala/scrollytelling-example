@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ConditionalParagraph from './ConditionalParagraph.svelte';
+  import type {ParagraphFormat} from '$lib/interfaces/ParagraphFormat'
 
-	type ParagraphFormat = { text: string; threshold: number }[];
 	let {
 		height,
 		progress,
@@ -20,9 +20,6 @@
 </script>
 
 <div style="height: {height * 100}vh;">
-	<p>This is a demo that is exactly {height} screens</p>
-	<p>Progress: {progress}</p>
-
 	{#each paragraphs as pg, index}
 		<ConditionalParagraph
 			text={pg.text}
